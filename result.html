@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: slateblue;">
+    <div style="text-align: center;">
+        <h1><b> MARKS SHEET</b></h1>
+    </div>
+    <div>
+
+    </div >
+    <div style="text-align: center;">
+        <form action="javascript:void(0);" style="border: none;">
+            <input type="text" id="physics" placeholder="physics marks" required><br><br>
+            <input type="text" id="maths" placeholder="maths marks" required><br><br>
+            <input type="text" id="english" placeholder="english marks" required><br><br>
+            <input type="text" id="biology" placeholder="bio marlogyks" required>
+            <br><br>
+            <button type="button" onclick="myMarks()" >show result</button>
+        </form>
+        <div id="display">
+
+        </div>
+        <div id="grades">
+
+        </div>
+        <script>
+            function myMarks(){
+            var physics=document.getElementById("physics").value;
+            var maths=document.getElementById("maths").value;
+            var english=document.getElementById("english").value;
+            var biology=document.getElementById("biology").value;
+            var total= parseFloat(physics) + parseFloat(maths) + parseFloat(english)+ parseFloat(biology);
+            alert(total);
+
+            var perc=(total/400)*100;
+            alert(perc);
+            document.getElementById("display").innerHTML= " hello candidate , your total marks are" + " "  + total +" " +"out of 400 "+"<br>" + "and your percentage is "+ " " + perc;
+            
+            /*/if(perc >=80){
+                document.getElementById("grades").innerHTML= " congratulations ,you are pass with grade A."; 
+                return false;
+            }
+            if(perc >=60){
+                document.getElementById("grades").innerHTML= " congratulations ,you are pass with grade B."; 
+                return false;
+            }
+            if(perc >=40){
+                document.getElementById("grades").innerHTML= " congratulations , you are pass with grade C."; 
+                return false;
+            }
+            else{
+                document.getElementById("grades").innerHTML= " better luck next time , you are faiL in exam."; 
+                return false;
+            }
+            switch(perc){
+                case 100:
+                    console.log();
+            }*/
+            switch(true){
+                case perc >= 80 :
+                    document.getElementById("grades").innerHTML= " congratulations ,you are pass with grade A."; 
+                    break;
+                case (perc >= 60):
+                    document.getElementById("grades").innerHTML= " congratulations ,you are pass with grade B."; 
+                    break;
+                case (perc >= 40):
+                    document.getElementById("grades").innerHTML= " congratulations ,you are pass with grade C."; 
+                    break;
+               default:
+                    document.getElementById("grades").innerHTML= "  better luck next time , you are faiL in exam."; 
+
+            }
+        
+        }
+
+        </script>
+        </div>
+</body>
+</html>
